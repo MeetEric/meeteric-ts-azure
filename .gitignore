@@ -11,6 +11,7 @@
 !**/release/locale
 
 **/*.zip
+**/*.tgz
 
 # NPM/Node
 **/node_modules/
