@@ -1,39 +1,6 @@
 import azure = require('azure-sb');
 import { IEventBus } from 'meeteric-ts';
-
-export class ServiceBusConfig {
-    private readonly namespace: string;
-    private readonly keyName: string;
-    private readonly key: string;
-    private readonly topic: string;
-    private readonly identifier: string;
-
-    constructor(config: any) {
-        if (config && config.key) {
-            this.namespace = config.namespace;
-            this.keyName = config.keyName;
-            this.key = config.key;
-            this.topic = config.topic;
-            this.identifier = `'${this.namespace}' - ${this.topic}'`;
-        }
-    }
-
-    public AsConnectionString(): string {
-        return `Endpoint=sb://${this.namespace}.servicebus.windows.net/;SharedAccessKeyName=${this.keyName};SharedAccessKey=${this.key};`;
-    }
-
-    public Identifier(): string {
-        return this.identifier;
-    }
-
-    public Topic(): string {
-        return this.topic;
-    }
-
-    public IsValid(): boolean {
-        return this.key !== undefined;
-    }
-}
+import { ServiceBusConfig } from './configs';
 
 export class AzureServiceBusEventBus implements IEventBus {
     private readonly identifier: string;
