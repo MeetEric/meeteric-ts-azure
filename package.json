@@ -1,6 +1,6 @@
 {
   "name": "meeteric-ts-azure",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./bundle",
   "scripts": {
     "build": "tsc --build tsconfig.json",
