@@ -1,9 +1,9 @@
 import azure = require('azure-sb');
-import { IEventBus } from 'meeteric-ts';
+import { IEventBusWriter } from 'meeteric-ts';
 import { ServiceBusConfig } from './../configs';
 import { AzureServiceBusTopic } from './AzureServiceBusTopic';
 
-export class AzureServiceBusTopicWriter extends AzureServiceBusTopic implements IEventBus {
+export class AzureServiceBusTopicWriter extends AzureServiceBusTopic implements IEventBusWriter {
     constructor(config: ServiceBusConfig) {
         super(config);
     }

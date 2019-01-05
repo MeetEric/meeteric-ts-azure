@@ -1,6 +1,6 @@
 {
   "name": "meeteric-ts-azure",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "./bundle",
   "scripts": {
     "build": "tsc --build tsconfig.json",
@@ -27,7 +27,7 @@
     "@types/node": "^9.4.6",
     "azure-sb": "^0.10.6",
     "azure-storage": "^2.10.2",
-    "meeteric-ts": "0.0.1",
+    "meeteric-ts": "0.1.1",
     "winston": "^3.1.0"
   },
   "devDependencies": {

@@ -1,8 +1,9 @@
 import azure = require('azure-sb');
+import { IEventBusReader } from 'meeteric-ts';
 import { AzureServiceBusTopic } from './AzureServiceBusTopic';
 import { ServiceBusConfig } from './../configs';
 
-export class AzureServiceBusTopicReader extends AzureServiceBusTopic {
+export class AzureServiceBusTopicReader extends AzureServiceBusTopic implements IEventBusReader {
     private readonly subscription: string;
 
     constructor(config: ServiceBusConfig) {
