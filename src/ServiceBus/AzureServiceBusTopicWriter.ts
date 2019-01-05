@@ -1,20 +1,11 @@
 import azure = require('azure-sb');
 import { IEventBus } from 'meeteric-ts';
-import { ServiceBusConfig } from './configs';
+import { ServiceBusConfig } from './../configs';
+import { AzureServiceBusTopic } from './AzureServiceBusTopic';
 
-export class AzureServiceBusEventBus implements IEventBus {
-    private readonly identifier: string;
-    private readonly serviceBus: azure.ServiceBusService;
-    private readonly topic: string;
-
+export class AzureServiceBusTopicWriter extends AzureServiceBusTopic implements IEventBus {
     constructor(config: ServiceBusConfig) {
-        this.serviceBus = azure.createServiceBusService(config.AsConnectionString());
-        this.topic = config.Topic();
-        this.identifier = `Azure Service Bus ${config.Identifier()}`;
-    }
-
-    public Identifier(): string {
-        return this.identifier;
+        super(config);
     }
 
     public async SendEvent(contents: any): Promise<void> {
