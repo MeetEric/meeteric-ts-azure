@@ -16,6 +16,11 @@
     "name": "Eric Maino",
     "email": "eric.maino@microsoft.com"
   },
+  "description" : "A collection of strongly typed Azure adapters",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MeetEric/meeteric-ts-azure"
+  },
   "license": "MIT",
   "dependencies": {
     "@types/lodash": "^4.14.103",
